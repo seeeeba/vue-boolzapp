@@ -37,34 +37,15 @@
                     </div>
                 </div>
                 <div class="search-row">
-                    <input type="text" placeholder="  Cerca o inizia una nuova chat">
+                    <input class="icon" type="text" placeholder="        Cerca o inizia una nuova chat">
                 </div>
-                <div class="recipient-section">
-                    <div class="recipient-row">
-                        <div class="user-image">
-                            <img src="img/avatar_1.jpg" alt="">
-                            <span>Michele</span>
-                        </div>
-                    </div>
-                    <div class="recipient-row">
-                        <div class="user-image">
-                            <img src="img/avatar_2.jpg" alt="">
-                            <span>Fabio</span>
-                        </div>
-                    </div>
-                    <div class="recipient-row active">
-                        <div class="user-image">
-                            <img src="img/avatar_3.jpg" alt="">
-                            <span>Samuele</span>
-                        </div>
-                    </div>
-                    <div class="recipient-row">
-                        <div class="user-image">
-                            <img src="img/avatar_6.jpg" alt="">
-                            <span>Luisa</span>
-                        </div>
-                    </div>
-                </div>                
+                
+                <ul class="message-list">
+                    <li v-for="(chat,index) in contacts" class="user-image">
+                        <img :src="'img/avatar' + chat.avatar + '.jpg'" alt="chat.name">
+                    <span>{{ chat.name }}</span>
+                </li>                                    
+            </ul>                 
             </div>
             <div class="col-right">
                 <div class="user-row">
