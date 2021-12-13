@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            activeChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -87,6 +88,12 @@ const app = new Vue(
                     ],
                 },
             ]
+        },
+
+        methods: {
+            chatSwitch: function(index){
+                this.activeChat = index;
+            }
         }
     }
-)    
+);    

@@ -41,7 +41,7 @@
                 </div>
                 
                 <ul class="message-list">
-                    <li v-for="(chat,index) in contacts" class="user-image">
+                    <li @click="chatSwitch(index)" v-for="(chat,index) in contacts" class="user-image">
                         <img :src="'img/avatar' + chat.avatar + '.jpg'" alt="chat.name">
                     <span>{{ chat.name }}</span>
                 </li>                                    
@@ -49,11 +49,13 @@
             </div>
             <div class="col-right">
                 <div class="user-row">
-                    <div class="user-image">
-                        <img src="img/avatar_3.jpg" alt="">
+                    <div v-for="contact in contacts[activeChat].avatar" class="user-image">
+                        <!-- <img src="img/avatar_3.jpg" alt="">-->
+                        
+                        <img :src="'img/avatar_' + contact + '.jpg'" alt=""> 
                         <div class="infos">
-                            <span>Samuele</span>
-                            <!-- <br> -->
+                            <span>{{ contacts[activeChat].name }}</span>
+                            
                             <span id="access">Ultimo accesso oggi alle</span>
                         </div>
                     </div>
