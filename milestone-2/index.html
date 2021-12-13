@@ -49,10 +49,8 @@
             </div>
             <div class="col-right">
                 <div class="user-row">
-                    <div v-for="contact in contacts[activeChat].avatar" class="user-image">
-                        <!-- <img src="img/avatar_3.jpg" alt="">-->
-                        
-                        <img :src="'img/avatar_' + contact + '.jpg'" alt=""> 
+                    <div class="user-image">                       
+                        <img :src="'img/avatar' + contacts[activeChat].avatar + '.jpg'" alt=""> 
                         <div class="infos">
                             <span>{{ contacts[activeChat].name }}</span>
                             
@@ -66,23 +64,13 @@
                     </div>
                 </div>
                 <div class="message-section">
-                    <div class="message-received">
-                        <div class="message-box">
-                            <span class="main-text">La Marianna va in campagna</span> <span class="date">28/03/2020 10:10:40</span>
+                    <div v-for="element in contacts[activeChat].messages" class="message">
+                        <div :class="element.status === 'received' ? 'received' :'sent'" class="message-box">
+                            <span  :class="(element.status === 'received' ? 'received-color':'sent-color') + ' message'" class="main-text">{{ element.text }}
+                                <span class="date">{{ element.date }}</span>
+                            </span> 
                         </div>                        
                     </div>
-                    <div class="message-sent">
-                        <div class="message-box">
-                            <span class="main-text">Sicuro di non aver sbagliato chat?</span>  <span class="date">28/03/2020 10:20:10</span>
-                        </div>                        
-                    </div>
-                    
-                    <div class="message-received">
-                        <div class="message-box">
-                            Ah scusa! <span class="date">28/03/2020 16:52:22</span>
-                        </div>                        
-                    </div>
-                    
                 </div>
                 <div class="footer-rightcol">
                     <i class="far fa-smile"></i>

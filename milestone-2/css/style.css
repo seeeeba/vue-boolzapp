@@ -187,38 +187,41 @@ main{
     color: black;
 }
 
-.message-received{
-    margin: 10px 0;
-    max-width: 45%;
+.message{
     min-width: 35%;
     border: 1px solide none;
-    background-color: white;
     border-radius: 10px;
     padding: 20px 8px;
-    align-self: flex-start;
+}
+
+.sent{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.received{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.sent-color{
+    background-color: #d5f9ba;
+}
+
+.received-color{
+    background-color: white;
 }
 
 .message-box{
     position: relative;
 }
 
-.message-received .date,
-.message-sent .date
-{
+.message .date{
     font-size: 9px;
     position: absolute;
-    bottom: -15px;
-    right: 0;
+    bottom: 4px;
+    right: 10px;
     color: #b7b9bc;
-}
-
-.message-sent{
-    margin: 10px 0;
-    max-width: 50%;
-    min-width: 35%;
-    border: 1px solide none;
-    background-color: #d5f9ba;
-    border-radius: 10px;
-    padding: 20px 8px;
-    align-self: flex-end;
 }
